@@ -31,3 +31,6 @@ django-rq==0.9.5
 
 # Time zones support
 pytz==2017.2
+
+django_nose
+django-rest-swagger==2.1.2
