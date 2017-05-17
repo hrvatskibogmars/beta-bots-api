@@ -65,7 +65,7 @@ class Common(Configuration):
     USE_L10N = True
     USE_TZ = True
     LOGIN_REDIRECT_URL = '/'
-
+    ALLOWED_HOSTS=["51.15.45.20"]
     # Static Files
     STATIC_ROOT = join(os.path.dirname(BASE_DIR), 'staticfiles')
     STATICFILES_DIRS = [join(os.path.dirname(BASE_DIR), 'static'), ]
