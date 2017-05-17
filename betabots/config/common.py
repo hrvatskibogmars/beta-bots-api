@@ -22,6 +22,7 @@ class Common(Configuration):
         'rest_framework.authtoken',  # token authentication
         'django_rq',                 # asynchronous queuing
         'versatileimagefield',       # image manipulation
+        'rest_framework_swagger',
 
         # Your apps
         'authentication',
@@ -65,7 +66,7 @@ class Common(Configuration):
     USE_L10N = True
     USE_TZ = True
     LOGIN_REDIRECT_URL = '/'
-    ALLOWED_HOSTS=["51.15.45.20"]
+    ALLOWED_HOSTS=["51.15.45.20", "127.0.0.1"]
     # Static Files
     STATIC_ROOT = join(os.path.dirname(BASE_DIR), 'staticfiles')
     STATICFILES_DIRS = [join(os.path.dirname(BASE_DIR), 'static'), ]
