@@ -3,7 +3,7 @@
 
 Hackathon. Check out the project's [documentation](http://mar5.github.io/betabots/).
 
-# Prerequisites
+# Prerequisites 
 - [virtualenv](https://virtualenv.pypa.io/en/latest/)
 - [postgresql](http://www.postgresql.org/)
 - [redis](http://redis.io/)
@@ -34,14 +34,10 @@ git init
 git remote add origin git@github.com:mar5/betabots.git
 ```
 
-Migrate the database and create a superuser:
+Migrate, create a superuser, and run the server:
 ```bash
 python betabots/manage.py migrate
 python betabots/manage.py createsuperuser
-```
-
-Run the development server:
-```bash
 python betabots/manage.py runserver
 ```
 
