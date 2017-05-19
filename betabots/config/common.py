@@ -237,3 +237,6 @@ class Common(Configuration):
     # default admin template. If you're using such an app, simply remove this.
     RQ_SHOW_ADMIN_LINK = True
     CORS_ORIGIN_ALLOW_ALL = True
+    JWT_AUTH = {
+         'JWT_RESPONSE_PAYLOAD_HANDLER': 'authentication.views.jwt_response_payload_handler',
+    }
