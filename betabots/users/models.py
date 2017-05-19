@@ -10,6 +10,9 @@ from django.utils.encoding import python_2_unicode_compatible
 @python_2_unicode_compatible
 class User(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    role = models.IntegerField(blank=True, null=True)
+    first_name = models.CharField(max_length=120)
+    last_name = models.CharField(max_length=120)
 
     def __str__(self):
         return self.username
