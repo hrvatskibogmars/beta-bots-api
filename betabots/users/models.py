@@ -21,17 +21,17 @@ class User(AbstractUser):
 class Korisnik(models.Model):
     ime = models.CharField(max_length=120)
     prezime = models.CharField(max_length=120)
-    oib = models.IntegerField()
-    mbg = models.IntegerField()
-    oi = models.IntegerField()
+    oib = models.IntegerField(blank=True, null=True)
+    mbg = models.IntegerField(blank=True, null=True)
+    oi = models.IntegerField(blank=True, null=True)
 
-    tel = models.CharField(max_length=120)
-    mob = models.CharField(max_length=120)
-    mail = models.CharField(max_length=120)
+    tel = models.CharField(max_length=120, blank=True, null=True)
+    mob = models.CharField(max_length=120, blank=True, null=True)
+    mail = models.CharField(max_length=120, blank=True, null=True)
 
-    adresa = models.CharField(max_length=120)
-    mjesto = models.CharField(max_length=120)
-    pt_broj = models.IntegerField()
+    adresa = models.CharField(max_length=120, blank=True, null=True)
+    mjesto = models.CharField(max_length=120, blank=True, null=True)
+    pt_broj = models.IntegerField(blank=True, null=True)
 
 
 class UgovorStruja(models.Model):
