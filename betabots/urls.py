@@ -7,12 +7,20 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic.base import RedirectView
 from rest_framework.routers import DefaultRouter
-
-from users.views import UserViewSet
 from rest_framework_swagger.views import get_swagger_view
+
+from users.views import (
+    UserViewSet,
+    KorisnikViewSet,
+    UgovorStrujaViewSet,
+    UgovorLedViewSet)
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
+router.register(r'korisnik', KorisnikViewSet)
+router.register(r'Ugovor Led', UgovorLedViewSet)
+router.register(r'Ugovor Struja', UgovorStrujaViewSet)
+
 schema_view = get_swagger_view(title='betabots API')
 
 urlpatterns = [
