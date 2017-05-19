@@ -42,17 +42,19 @@ class KorisnikViewSet(mixins.CreateModelMixin,
     """
     queryset = Korisnik.objects.all()
     serializer_class = KorisnikSerializer
+    permission_classes = (IsUserOrReadOnly,)
 
 
 class UgovorStrujaViewSet(mixins.CreateModelMixin,
                           mixins.RetrieveModelMixin,
                           mixins.UpdateModelMixin,
                           viewsets.GenericViewSet):
-        """
-        Creates, Updates, and retrives User accounts
-        """
-        queryset = UgovorStruja.objects.all()
-        serializer_class = UgovorStrujaSerializer
+    """
+    Creates, Updates, and retrives User accounts
+    """
+    queryset = UgovorStruja.objects.all()
+    serializer_class = UgovorStrujaSerializer
+    permission_classes = (IsUserOrReadOnly,)
 
 
 class UgovorLedViewSet(mixins.CreateModelMixin,
@@ -64,3 +66,4 @@ class UgovorLedViewSet(mixins.CreateModelMixin,
     """
     queryset = UgovorLed.objects.all()
     serializer_class = UgovorLedSerializer
+    permission_classes = (IsUserOrReadOnly,)
