@@ -67,7 +67,7 @@ class Common(Configuration):
     USE_L10N = True
     USE_TZ = True
     LOGIN_REDIRECT_URL = '/'
-    ALLOWED_HOSTS=["51.15.45.20", "127.0.0.1"]
+    ALLOWED_HOSTS=["51.15.45.20", "127.0.0.1", "localhost"]
     # Static Files
     STATIC_ROOT = join(os.path.dirname(BASE_DIR), 'staticfiles')
     STATICFILES_DIRS = [join(os.path.dirname(BASE_DIR), 'static'), ]
@@ -235,3 +235,4 @@ class Common(Configuration):
     # admin template so it may interfere with other apps that modify the
     # default admin template. If you're using such an app, simply remove this.
     RQ_SHOW_ADMIN_LINK = True
+    CORS_ORIGIN_ALLOW_ALL = True
