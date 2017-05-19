@@ -26,8 +26,8 @@ class Common(Configuration):
 
         # Your apps
         'authentication',
-        'users'
-
+        'users',
+        'corsheaders',
     )
 
     # https://docs.djangoproject.com/en/1.10/topics/http/middleware/
