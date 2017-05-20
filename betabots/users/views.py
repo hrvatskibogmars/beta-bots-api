@@ -51,6 +51,7 @@ class UgovorStrujaViewSet(mixins.CreateModelMixin,
 class UgovorStrujaListAPIView(viewsets.ModelViewSet):
     queryset = UgovorStruja.objects.all()
     serializer_class = UgovorStrujaSerializer
+    permission_classes = (IsUserOrReadOnly,)
 
     def get_queryset(self):
         """
