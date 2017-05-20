@@ -38,9 +38,9 @@ class UgovorStruja(models.Model):
     pt_broj = models.CharField(max_length=120, blank=True, null=True)
 
 
-    # 1 - IDEAL
+    # 0 - IDEAL
     # 2 - BONUS
-    # 3 - KLASIK
+    # 1 - KLASIK
     proizvod = models.IntegerField(null=True, blank=True)
 
     # IF TRUE
@@ -60,8 +60,8 @@ class UgovorStruja(models.Model):
     omm_jt = models.IntegerField(blank=True, null=True)
 
     omm_datum_ocitanja = models.CharField(max_length=120, blank=True, null=True)
-    omm_preporucitelj = models.IntegerField(blank=True, null=True)
-    omm_preporucitelj_oib = models.IntegerField(blank=True, null=True)
+    omm_preporucitelj = models.CharField(max_length=120, blank=True, null=True)
+    omm_preporucitelj_oib = models.CharField(max_length=120, blank=True, null=True)
 
     datum = models.CharField(max_length=120, null=True, blank=True)
     datum_epoch = models.CharField(max_length=120, null=True, blank=True)

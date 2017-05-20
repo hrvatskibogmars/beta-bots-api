@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style type="text/css">
+        body h1 h2 p{
+            font-family: "Helvetica", "sans-serif";
+        }
+    </style>
+    <title>Title</title>
+
+</head>
+<body>
+    <img src="logo.png" alt="Mountain View" style="text-align: center;">
+    <h1 style="text-align: center; font-size: 18px; color:#214187;"> Dodatak ugovoru o opskrbi elektricnom energijom </h1>
+    <h2 style="padding-left: 30px; float: left;">
+        Tvrtka: RWE Energija d.o.o. <br>
+        Sjedište: Capraška ulica 6,1000 Zagreb <br>
+        OIB: 81103558092 <br>
+        MB: 2788748 <br>
+        IBAN: HR9823400091110594242 <br>
+        E-mail: info@rwe.hr <br>
+        Web: www.rwe.hr <br>
+        Tel: 0800 877 <br>
+        Fax: +385 1 6387 452 <br>
+        MBS: 080771938 <br>
+    </h2>
+    <h1 style="padding-left: 30px;">____________________________________________________________________________________</h1>
+    <h1 style="padding-left: 30px;">Opskrbljivac</h1>
+    <h2 style="font-family: 'Roboto', sans-serif; padding-left: 30px;">
+        Ime: {{data.ime}}<br>
+        Prezime: {{data.prezime}}<br>
+        OIB: {{data.oib}}<br>
+        MBG: {{data.mbg}}<br>
+        Adresa Stanovanja: {{data.adresa}}<br>
+        Mjesto: {{data.mjesto}}<br>
+        Adresa za dostavu racuna: {{data.adresa_rac}}<br>
+        Poštanski broj: {{data.pt_broj}}
+    </h2>
+    <h1 style="padding-left: 30px;">____________________________________________________________________________________</h1>
+    <h1 style="padding-left: 30px;">Predmet Ugovor</h1>
+    <p style="padding-left: 30px; text-align: justify;">
+        Ugovorne strane suglasno utvrduju da su sklopile ugovor o opskrbi elektricnom energijom (u daljnjem tekstu: Ugovor) te da sklapanjem ovog dodatka Ugovora (u daljnjem tekstu: Dodatak) produljuju inicijalno trajanje Ugovora ovisno o odabranom Proizvodu. Krajnji kupac je duzan potpisani primjerak Dodataka poslati na adresu Opskrljivacu u roku od 14 dana od dana kada je zaprimio Dodatak.
+        Ukoliko Krajnji kupac ne posalje potpisani primjerak Dodataka u navedenom roku i/ili u istom roku pisanim putem ne odbije ponudeni Dodatak, smatrat ce se da je prihvatio Dodatak, buduci da Opskrbljivac i Krajnji kupac stoje u stalnoj poslovnoj vezi.
+    </p>
+    <h1 style="padding-left: 30px;">Obracunsko mjerno mjesto____________________________________________________________</h1>
+    <h2 style="padding-left: 30px;">
+        OMM: {{ data.omm_broj }} | Tarifni model: {{ data.omm_tarifni_model }} | Mjesto: {{ data.omm_mjesto }} <br>
+        Adresa: {{ data.omm_adresa }} | Postanski broj: {{ data.omm_pt_broj}} <br>
+    </h2>
+
+    <h2 style="padding-left: 30px;">
+        VT: {{ data.omm_vt}} | NT: {{ data.omm_nt}} | JT: {{ data.omm_jt}}
+        Datum Ocitavanja: {{ data.datum}} | Preporucitelj: {{ data.omm_preporucitelj_oib}} | OIB Preporucitelja: {{ data.omm_preporucitelj}}
+    </h2>
+    <p>
+
+    </p>
+</body>
+</html>

@@ -28,6 +28,8 @@ class Common(Configuration):
         'authentication',
         'users',
         'corsheaders',
+        'wkhtmltopdf',
+        'pdfkit',
     )
 
     # https://docs.djangoproject.com/en/1.10/topics/http/middleware/
@@ -177,6 +179,10 @@ class Common(Configuration):
             'django': {
                 'handlers': ['console'],
                 'propagate': True,
+            },
+            'xhtml2pdf': {
+                'handlers': ['console'],
+                'level': 'DEBUG',
             },
             'django.server': {
                 'handlers': ['django.server'],

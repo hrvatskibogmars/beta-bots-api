@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
 from django.conf import settings
@@ -13,7 +14,9 @@ from users.views import (
     UserViewSet,
     UgovorStrujaViewSet,
     UgovorStrujaListAPIView,
-    UgovorLedViewSet)
+    UgovorLedViewSet,
+    HelloPDFView
+)
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -29,6 +32,7 @@ urlpatterns = [
     url(r'^django-rq/', include('django_rq.urls')),
     url(r'^api/v1/', include('authentication.urls')),
     url(r'^api/v1/', include(router.urls)),
+    url(r'^pdf/$', HelloPDFView.as_view()),
     url(r'^$', schema_view),
 
 

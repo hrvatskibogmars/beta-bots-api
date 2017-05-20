@@ -1,11 +1,11 @@
+# -*- coding: utf-8 -*-
 from rest_framework import viewsets, mixins
 from rest_framework.permissions import AllowAny
-from rest_framework.decorators import detail_route, list_route
-from rest_framework.response import Response
-from rest_framework import filters
-from rest_framework.generics import ListAPIView
-
-
+from weasyprint import HTML, CSS
+from django.template.loader import get_template
+from django.http import HttpResponse
+from django.conf import settings
+from easy_pdf.views import PDFTemplateView
 
 from .models import (
     User,
@@ -79,3 +79,20 @@ class UgovorLedViewSet(mixins.CreateModelMixin,
     queryset = UgovorLed.objects.all()
     serializer_class = UgovorLedSerializer
     permission_classes = (IsUserOrReadOnly,)
+
+
+class HelloPDFView(PDFTemplateView):
+    template_name = 'test.html'
+    base_url = 'file://' + settings.STATIC_ROOT
+    download_filename = 'test.pdf'
+
+    def get_context_data(self, **kwargs):
+        data = UgovorStruja.objects.filter(oib='35845299926')[0]
+
+        return super(HelloPDFView, self).get_context_data(
+            pagesize='A4',
+            title='Hi there!',
+            data=data,
+            encoding=u'utf-8',
+            **kwargs
+        )
