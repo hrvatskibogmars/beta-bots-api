@@ -70,7 +70,7 @@ class Common(Configuration):
     ALLOWED_HOSTS=["51.15.45.20", "127.0.0.1", "localhost"]
     # Static Files
     STATIC_ROOT = join(os.path.dirname(BASE_DIR), 'staticfiles')
-    STATICFILES_DIRS = [join(os.path.dirname(BASE_DIR), 'static'), ]
+    STATICFILES_DIRS = [join(os.path.dirname(BASE_DIR), 'betabots/templates'), ]
     STATIC_URL = '/static/'
     STATICFILES_FINDERS = (
         'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -239,4 +239,5 @@ class Common(Configuration):
     CORS_ORIGIN_ALLOW_ALL = True
     JWT_AUTH = {
          'JWT_RESPONSE_PAYLOAD_HANDLER': 'authentication.views.jwt_response_payload_handler',
+         'JWT_VERIFY_EXPIRATION': False,
     }
