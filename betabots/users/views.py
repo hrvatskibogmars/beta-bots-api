@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from rest_framework import viewsets, mixins
 from rest_framework.permissions import AllowAny
-from weasyprint import HTML, CSS
 from django.template.loader import get_template
 from django.http import HttpResponse
 from django.conf import settings
