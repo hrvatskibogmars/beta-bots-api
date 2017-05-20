@@ -28,8 +28,6 @@ class Common(Configuration):
         'authentication',
         'users',
         'corsheaders',
-        'wkhtmltopdf',
-        'pdfkit',
     )
 
     # https://docs.djangoproject.com/en/1.10/topics/http/middleware/
