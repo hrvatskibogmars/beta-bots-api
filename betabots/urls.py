@@ -11,15 +11,16 @@ from rest_framework_swagger.views import get_swagger_view
 
 from users.views import (
     UserViewSet,
-    KorisnikViewSet,
     UgovorStrujaViewSet,
+    UgovorStrujaListAPIView,
     UgovorLedViewSet)
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
-router.register(r'korisnik', KorisnikViewSet)
 router.register(r'Ugovor Led', UgovorLedViewSet)
 router.register(r'Ugovor Struja', UgovorStrujaViewSet)
+router.register(r'Ugovor Struja List', UgovorStrujaListAPIView)
+
 
 schema_view = get_swagger_view(title='betabots API')
 

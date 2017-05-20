@@ -1,9 +1,14 @@
 from rest_framework import viewsets, mixins
 from rest_framework.permissions import AllowAny
+from rest_framework.decorators import detail_route, list_route
+from rest_framework.response import Response
+from rest_framework import filters
+from rest_framework.generics import ListAPIView
+
+
 
 from .models import (
     User,
-    Korisnik,
     UgovorLed,
     UgovorStruja)
 
@@ -11,7 +16,6 @@ from .permissions import IsUserOrReadOnly
 from .serializers import (
     CreateUserSerializer,
     UserSerializer,
-    KorisnikSerializer,
     UgovorLedSerializer,
     UgovorStrujaSerializer)
 
@@ -33,18 +37,6 @@ class UserViewSet(mixins.CreateModelMixin,
         return super(UserViewSet, self).create(request, *args, **kwargs)
 
 
-class KorisnikViewSet(mixins.CreateModelMixin,
-                  mixins.RetrieveModelMixin,
-                  mixins.UpdateModelMixin,
-                  viewsets.GenericViewSet):
-    """
-    Creates, Updates, and retrives User accounts
-    """
-    queryset = Korisnik.objects.all()
-    serializer_class = KorisnikSerializer
-    permission_classes = (IsUserOrReadOnly,)
-
-
 class UgovorStrujaViewSet(mixins.CreateModelMixin,
                           mixins.RetrieveModelMixin,
                           mixins.UpdateModelMixin,
@@ -55,6 +47,26 @@ class UgovorStrujaViewSet(mixins.CreateModelMixin,
     queryset = UgovorStruja.objects.all()
     serializer_class = UgovorStrujaSerializer
     permission_classes = (IsUserOrReadOnly,)
+
+
+class UgovorStrujaListAPIView(viewsets.ModelViewSet):
+    queryset = UgovorStruja.objects.all()
+    serializer_class = UgovorStrujaSerializer
+
+    def get_queryset(self):
+        """
+        Optionally restricts the returned purchases to a given user,
+        by filtering against a `username` query parameter in the URL.
+        """
+        queryset = UgovorStruja.objects.all()
+        oib = self.request.query_params.get('oib', None)
+        agent = self.request.query_params.get('oib', None)
+
+        if oib is not None:
+            queryset = queryset.filter(oib=oib)
+        if agent is not None:
+            queryset = queryset.filter(agent=agent)
+        return queryset
 
 
 class UgovorLedViewSet(mixins.CreateModelMixin,

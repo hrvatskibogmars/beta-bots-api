@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import User, Korisnik, UgovorLed, UgovorStruja
+from .models import User, UgovorLed, UgovorStruja
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -9,13 +9,6 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ('id', 'username', 'first_name', 'last_name',)
         read_only_fields = ('username', )
-
-
-class KorisnikSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Korisnik
-        fields = '__all__'
 
 
 class UgovorLedSerializer(serializers.ModelSerializer):
